@@ -1,3 +1,14 @@
+Para este proyecto, decidi instalar react-router-dom entre otras extensiones de react y redux, para el enrutado del mismo. 
+
+A la hora de modificar el navbar para que se renderice solo al hacer scroll up, cree unos eventListener para poder tomar estos eventos, y renderice el componente solo cuando el scroll es hacia arriba o al inicio de la pagina. 
+
+En cuanto a los favoritos, cree un estado global para poder agregar estos meetups seleccionados, y despues poder renderizarlos en la pagina correspondiente. Haciendo luego un filter sobre este mismo array para poder eliminar el meetup cuando sea necesario. 
+
+
+Por otro lado, para inicializar el proyecto, primero hay que ingreasar a la carpeta del proyecto y abrir la consola, luego hacer un npm install para poder cargar todas las dependencias necesarias para su correcto funcionamiento.
+
+Finalmente hay que hacer un npm start para poder levantar el proyecto en una pagina local.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
