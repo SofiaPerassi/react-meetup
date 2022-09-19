@@ -5,6 +5,7 @@ const initialState = {
 
   function rootReducer(state = initialState, action) {
     if (action.type === "ADD_MEETUP_FAVORITE") {
+        console.log(state.meetupsFavorites)
         return {
           ...state,
           meetupsFavorites: state.meetupsFavorites.concat(action.payload)

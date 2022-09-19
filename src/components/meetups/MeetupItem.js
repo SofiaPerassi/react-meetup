@@ -11,8 +11,6 @@ export default function MeetupItem() {
   if (!data) return <p>Loading...</p>;
   // let [item] = data;
 
-  
-
   return (
     <li className={classes.item} data-test='meet-up-item'>
 

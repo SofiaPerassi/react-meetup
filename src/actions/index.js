@@ -1,5 +1,4 @@
 export function addMeetupFavorite(payload) { // payload --> obj que representa un meetup
-    console.log(payload)
     return { type: "ADD_MEETUP_FAVORITE", payload };
   }
   
