@@ -10,6 +10,10 @@ export default function FavoritesPage() {
 
   const meetups = useSelector((state) => state.meetupsFavorites)
 
+  function handleRemoveMeetup(id){
+    dispatch(removeMeetupFavorite(id))
+  }
+
   return (
     <section>
       <li className={classes.item} data-test='meet-up-item'>
@@ -24,23 +28,11 @@ export default function FavoritesPage() {
             <p>{meetup.description}</p>
           </div>
           <div className={classes.actions}>
-            <button onClick={() => removeMeetupFavorite(meetup.id)}>Add to favorites</button>
+            <button onClick={() => handleRemoveMeetup(meetup.id)}>Delete</button>
           </div>
         </Card>
         ))}
       </li>
     </section>
   );
-}
-
-function mapStateToProps(state) {
-  return {
-    meetups: state.meetupsFavourites
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    removeMeetupFavorite: id => dispatch(removeMeetupFavorite(id))
-  };
 }

@@ -2,14 +2,20 @@ import { useFetch } from "./../../util-hooks/useFetch";
 import classes from "./MeetupItem.module.css";
 import Card from "../ui/Card";
 import { addMeetupFavorite } from '../../actions/index';
+import { useDispatch } from "react-redux";
 
 export default function MeetupItem() {
   const { data } = useFetch({
     url: "/data.json",
   });
 
+  const dispatch = useDispatch()
+
+  function handleFavorite(meetup) {
+    dispatch(addMeetupFavorite(meetup))
+  }
+
   if (!data) return <p>Loading...</p>;
-  // let [item] = data;
 
   return (
     <li className={classes.item} data-test='meet-up-item'>
@@ -25,7 +31,7 @@ export default function MeetupItem() {
           <p>{meetup.description}</p>
         </div>
         <div className={classes.actions}>
-          <button onClick={() => addMeetupFavorite(meetup)}>Add to favorites</button>
+          <button onClick={() => handleFavorite(meetup)}>Add to favorites</button>
         </div>
       </Card>
       ))}

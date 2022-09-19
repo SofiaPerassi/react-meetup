@@ -11,16 +11,14 @@ export default function MainNavigation() {
 
   let lastScroll = 0
 
-    const controlNavbar = () => {
-      
-      let currentScroll = window.pageYOffset
-      
-      if (window.scrollY > 100) {
-            setShow(false)
-        } else {
-            setShow(true)
-        }
+  const controlNavbar = () => {
+    if (window.scrollY >= lastScroll ) {
+      setShow(false)
+    }else{
+      setShow(true)
     }
+    lastScroll = window.scrollY;
+  }
 
     useEffect(() => {
         window.addEventListener('scroll', controlNavbar)
